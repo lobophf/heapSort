@@ -6,7 +6,7 @@
 class Heapsort{
 private:
 	int *m_pData;
-	int m_size;
+	unsigned const int m_SIZE;
 	Heap *m_heap = nullptr;
 
 private:
@@ -15,7 +15,7 @@ private:
 	void deallocateAHeap();
 
 public:	
-	Heapsort(int *pData, int size);
+	Heapsort(int *pData, unsigned const int size);
 	~Heapsort();
 };
 
