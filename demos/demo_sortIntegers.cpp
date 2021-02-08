@@ -43,7 +43,7 @@ void fillArray(int arr[], int size){
 
 bool isSorted(int arr[], int size){
 	for(int i = 1; i < size; i++){
-		if(arr[i - 1] >= arr[i]){
+		if(arr[i - 1] > arr[i]){
 			return false;
 		}
 	}
