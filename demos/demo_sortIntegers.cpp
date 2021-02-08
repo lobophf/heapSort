@@ -12,11 +12,11 @@ int main(){
 	int *arr = new int[SIZE];
 
 	fillArray(arr, SIZE);
-	std::cout << "The array before sorting :" << std::endl;
+	std::cout << "The array before sorting:" << std::endl;
 	printArray(arr, SIZE);
 
 	Heapsort(arr, SIZE);
-	std::cout << std::endl <<"The array after sorting :" << std::endl;
+	std::cout << std::endl << "The array after sorting:" << std::endl;
 	printArray(arr, SIZE);
 
         if(isSorted(arr, SIZE)) std::cout << std::endl << "The array was successfully sorted!" << std::endl;
