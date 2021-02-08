@@ -19,7 +19,7 @@ int main(){
 	std::cout << std::endl <<"The array after sorting :" << std::endl;
 	printArray(arr, SIZE);
 
-        if(isSorted(arr, SIZE)) std::cout << std::endl << "The array has secessefuly sorted!" << std::endl;
+        if(isSorted(arr, SIZE)) std::cout << std::endl << "The array was successfully sorted!" << std::endl;
 
 	delete[] arr;
 
