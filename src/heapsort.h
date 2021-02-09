@@ -15,7 +15,7 @@ private:
 	void deallocateAHeap();
 
 public:	
-	Heapsort(int *pData, unsigned const int size);
+	Heapsort(int *pData, unsigned int size);
 	~Heapsort();
 };
 
