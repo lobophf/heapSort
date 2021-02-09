@@ -5,20 +5,20 @@ class Heap{
 private:
 	
 	int *m_pData;
-	int m_size;
+	unsigned int m_size;
 
 private:
 
-	int getLeftChildIndex(int index);
-	int getRightChildIndex(int index);
-	void swapNodeValue(int firstNodeIndex, int secondNodeIndex);
-	bool nodeHasALeftChild(int index);
-	bool nodeHasARightChild(int index);
-	void trySwapNodes(int currentIndex, int childIndex, bool wasSwaped);
+	int getLeftChildIndex(unsigned int index);
+	int getRightChildIndex(unsigned int index);
+	void swapNodeValue(unsigned int firstNodeIndex, unsigned int secondNodeIndex);
+	bool nodeHasALeftChild(unsigned int index);
+	bool nodeHasARightChild(unsigned int index);
+	void trySwapNodes(unsigned int currentIndex, unsigned int childIndex, bool wasSwaped);
 
 public:
 
-	Heap(int *pData, int size);
+	Heap(int *pData, unsigned int size);
 	void heapify();
 	void pop();
 };
