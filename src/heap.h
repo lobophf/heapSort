@@ -18,7 +18,7 @@ private:
 
 public:
 
-	Heap(int *pData, unsigned const int size);
+	Heap(int *pData, unsigned int size);
 	void heapify();
 	void pop();
 };

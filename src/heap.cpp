@@ -9,7 +9,7 @@ int Heap::getRightChildIndex(unsigned int index){
 }
 
 void Heap::swapNodeValue(unsigned int firstNodeIndex, unsigned int secondNodeIndex){
-	unsigned int tempValue = m_pData[secondNodeIndex];
+	int tempValue = m_pData[secondNodeIndex];
 	m_pData[secondNodeIndex] = m_pData[firstNodeIndex];
 	m_pData[firstNodeIndex] = tempValue;
 }
@@ -30,12 +30,12 @@ void Heap::trySwapNodes(unsigned int currentIndex, unsigned int childIndex, bool
 	}
 }
 
-Heap::Heap(int *pData, unsigned const int size) : m_pData(pData), m_size(size){
+Heap::Heap(int *pData, unsigned int size) : m_pData(pData), m_size(size){
 
 }
 
 void Heap::heapify(){
-	for (unsigned int index = m_size - 1; index >= 0; index--){
+	for (unsigned int index = m_size - 1; index + 1 > 0; index--){
 		bool wasSwaped = false;
 		if(nodeHasALeftChild(index)) trySwapNodes(index, getLeftChildIndex(index), &wasSwaped);
 		if(nodeHasARightChild(index)) trySwapNodes(index, getRightChildIndex(index), &wasSwaped);
