@@ -15,7 +15,7 @@ int main(){
 	std::cout << "The array before sorting:" << std::endl;
 	printArray(arr, SIZE);
 
-	Heapsort(arr, SIZE);
+	Heapsort<int>(arr, SIZE);
 	std::cout << std::endl << "The array after sorting:" << std::endl;
 	printArray(arr, SIZE);
 

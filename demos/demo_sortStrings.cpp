@@ -2,48 +2,46 @@
 #include <random>
 #include "../src/heapsort.h"
 
-void printArrayAsString(int arr[], unsigned int size);
-void fillArray(int arr[], unsigned int size);
-bool isSorted(int arr[], unsigned int size);
-
-void t(unsigned int a){
-	std::cout << a << std::endl;
-}
+void printArray(char arr[], unsigned int size);
+void fillArray(char arr[], unsigned int size);
+bool isSorted(char arr[], unsigned int size);
 
 int main(){
-	unsigned const int SIZE = 30;
-	int *arr = new int[SIZE];
+
+	unsigned const int SIZE = 100;
+	char *arr = new char[SIZE];
 
 	fillArray(arr, SIZE);
-	std::cout << "The string before sorting: ";
-	printArrayAsString(arr, SIZE);
+	std::cout << "The array before sorting:" << std::endl;
+	printArray(arr, SIZE);
 
-	Heapsort(arr, SIZE);
-	std::cout << "The string after sorting:  ";
-	printArrayAsString(arr, SIZE);
+	Heapsort<char>(arr, SIZE);
+	std::cout << std::endl << "The array after sorting:" << std::endl;
+	printArray(arr, SIZE);
 
-        if(isSorted(arr, SIZE)) std::cout << "The string was successfully sorted!" << std::endl;
+        if(isSorted(arr, SIZE)) std::cout << std::endl << "The array was successfully sorted!" << std::endl;
 
 	delete[] arr;
+
 	return 0;
 }
 
-void printArrayAsString(int arr[], unsigned int size){
+void printArray(char arr[], unsigned int size){
 	for(unsigned int i = 0; i < size; i++){
-		std::cout << (char)arr[i];
+		std::cout << arr[i];
 	}
 	std::cout << std::endl;
 }
 
-void fillArray(int arr[], unsigned int size){
+void fillArray(char arr[], unsigned int size){
 
 	std::mt19937 MersenneTwisterRand(time(0));
 	for(unsigned int i = 0; i < size; i++){
-		arr[i] = (int)('a' + MersenneTwisterRand() % 26);	
+		arr[i] = (char)('a' + MersenneTwisterRand() % 26);	
 	}
 }
 
-bool isSorted(int arr[], unsigned int size){
+bool isSorted(char arr[], unsigned int size){
 	for(unsigned int i = 1; i < size; i++){
 		if(arr[i - 1] > arr[i]){
 			return false;
