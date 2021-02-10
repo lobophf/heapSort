@@ -1,6 +1,8 @@
 #ifndef HEAP_H
 #define HEAP_H
 
+#include <math.h>
+
 class Heap{
 private:
 	
@@ -11,6 +13,7 @@ private:
 
 	int getLeftChildIndex(unsigned int index);
 	int getRightChildIndex(unsigned int index);
+	int getParentIndex(unsigned int index);
 	void swapNodeValue(unsigned int firstNodeIndex, unsigned int secondNodeIndex);
 	bool nodeHasALeftChild(unsigned int index);
 	bool nodeHasARightChild(unsigned int index);
