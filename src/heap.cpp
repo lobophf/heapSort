@@ -1,14 +1,14 @@
 #include "heap.h"
 
-int Heap::getLeftChildIndex(unsigned int index){
+unsigned int Heap::getLeftChildIndex(unsigned int index){
 	return 2 * index + 1;
 }
 
-int Heap::getRightChildIndex(unsigned int index){
+unsigned int Heap::getRightChildIndex(unsigned int index){
 	return 2 * index + 2;
 }
 
-int Heap::getParentIndex(unsigned int index){
+unsigned int Heap::getParentIndex(unsigned int index){
         return floor(index / 2);
 }
 
