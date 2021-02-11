@@ -26,10 +26,10 @@ bool Heap::nodeHasARightChild(unsigned int index){
 	return getRightChildIndex(index) < m_size ? true : false;
 }
 
-void Heap::trySwapNodes(unsigned int currentIndex, unsigned int childIndex, bool wasSwaped){
+void Heap::trySwapNodes(unsigned int index, unsigned int childIndex, bool wasSwaped){
 	int childValue = m_pData[childIndex];
-	if(childValue > m_pData[currentIndex]){
-		swapNodeValue(childIndex, currentIndex);
+	if(childValue > m_pData[index]){
+		swapNodeValue(childIndex, index);
 		wasSwaped = true;
 	}
 }
@@ -38,16 +38,28 @@ Heap::Heap(int *pData, unsigned int size) : m_pData(pData), m_size(size){
 
 }
 
+void Heap::checkBranchUnderLeft(unsigned int index, bool wasSwaped){
+	if(nodeHasALeftChild(index)) trySwapNodes(index, getLeftChildIndex(index), &wasSwaped);
+}
+
+void Heap::checkBranchUnderRight(unsigned int index, bool wasSwaped){
+	if(nodeHasARightChild(index)) trySwapNodes(index, getRightChildIndex(index), &wasSwaped);
+}
+
 void Heap::heapify(){
 	for (unsigned int index = getParentIndex(m_size - 1); index + 1 > 0; index--){
 		bool wasSwaped = false;
-		if(nodeHasALeftChild(index)) trySwapNodes(index, getLeftChildIndex(index), &wasSwaped);
-		if(nodeHasARightChild(index)) trySwapNodes(index, getRightChildIndex(index), &wasSwaped);
+		checkBranchUnderLeft(index, &wasSwaped);
+		checkBranchUnderRight(index, &wasSwaped);
 		if(wasSwaped) heapify();
 	}
 }
 
+void Heap::decrementSize(){
+	m_size--;
+}
+
 void Heap::pop(){
 	swapNodeValue(0, m_size - 1);
-	m_size--;
+	decrementSize();
 }
