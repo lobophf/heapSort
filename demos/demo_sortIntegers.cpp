@@ -37,7 +37,7 @@ void fillArray(int arr[], unsigned int size){
 
 	std::mt19937 MersenneTwisterRand(time(0));
 	for(unsigned int i = 0; i < size; i++){
-		arr[i] = MersenneTwisterRand();	
+		arr[i] = MersenneTwisterRand() % 100;	
 	}
 }
 
