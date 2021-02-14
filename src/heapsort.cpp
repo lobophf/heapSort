@@ -1,7 +1,7 @@
 #include "heapsort.h"
 
 void Heapsort::sort(){
-	for(int i = 0; i < m_SIZE - 1; i++){
+	for(unsigned int i = 0; i < m_SIZE - 1; i++){
 		m_heap->heapify();
 		m_heap->pop();	
 	}
