@@ -13,7 +13,6 @@ private:
 
 	unsigned int getLeftChildIndex(unsigned int index);
 	unsigned int getRightChildIndex(unsigned int index);
-	unsigned int getParentIndex(unsigned int index);
 	void swapNodeValue(unsigned int firstNodeIndex, unsigned int secondNodeIndex);
 	bool nodeHasALeftChild(unsigned int index);
 	bool nodeHasARightChild(unsigned int index);

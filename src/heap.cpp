@@ -8,10 +8,6 @@ unsigned int Heap::getRightChildIndex(unsigned int index){
 	return 2 * index + 2;
 }
 
-unsigned int Heap::getParentIndex(unsigned int index){
-        return floor(index / 2);
-}
-
 void Heap::swapNodeValue(unsigned int firstNodeIndex, unsigned int secondNodeIndex){
 	int tempValue = m_pData[secondNodeIndex];
 	m_pData[secondNodeIndex] = m_pData[firstNodeIndex];
@@ -47,7 +43,7 @@ void Heap::checkBranchUnderRight(unsigned int index, bool wasSwaped){
 }
 
 void Heap::heapify(){
-	for (unsigned int index = getParentIndex(m_size - 1); index + 1 > 0; index--){
+	for (unsigned int index = m_size - 1; index + 1 > 0; index--){
 		bool wasSwaped = false;
 		checkBranchUnderLeft(index, &wasSwaped);
 		checkBranchUnderRight(index, &wasSwaped);
