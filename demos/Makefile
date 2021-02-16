@@ -20,10 +20,10 @@ demo_sortStrings.o: $(BUILDDIR) heapsort.o
 	$(CC) -c -o $(BUILDDIR)/demo_sortStrings.o demo_sortStrings.cpp 
 
 heapsort.o: heap.o
-	$(CC) -c -o $(BUILDDIR)/heapsort.o ../src/heapsort.cpp
+	$(CC) -c -o $(BUILDDIR)/heapsort.o $(SRCDIR)/heapsort.cpp
 
 heap.o:
-	$(CC) -c -o $(BUILDDIR)/heap.o ../src/heap.cpp
+	$(CC) -c -o $(BUILDDIR)/heap.o $(SRCDIR)/heap.cpp
 
 # create the folders
 $(BUILDDIR):
