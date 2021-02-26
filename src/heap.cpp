@@ -23,6 +23,7 @@ bool Heap::nodeHasARightChild(unsigned int index){
 }
 
 void Heap::trySwapNodes(unsigned int index, unsigned int childIndex, bool wasSwaped){
+	wasSwaped = false;
 	int childValue = m_pData[childIndex];
 	if(childValue > m_pData[index]){
 		swapNodeValue(childIndex, index);
